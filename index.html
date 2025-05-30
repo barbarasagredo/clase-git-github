@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica Git & GitHub - DesafíoLatam</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Barra de navegación para facilitar el acceso a las secciones -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Git & GitHub</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#datos">Datos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#fork-clone">Fork vs Clone</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#estados">Estados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tutoriales">Tutoriales</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container py-5">
+      <!-- Encabezado principal -->
+      <header class="text-center mb-5">
+        <h1 class="header-title mb-3">🚀 Tutoría Git & GitHub</h1>
+        <p class="lead text-muted">
+          Bienvenidos! Vamos a dominar Git y GitHub desde cero.
+        </p>
+      </header>
+
+      <!-- Datos Personales -->
+      <div class="card mb-4" id="datos">
+        <div class="card-header bg-primary">
+          <i class="fas fa-user section-icon"></i>Mis datos
+        </div>
+        <div class="card-body">
+          <!-- Aquí colocas tu información para personalizar la guía -->
+          <p class="text-muted mb-3">
+            Completa esta sección con tus datos para mantener un registro de tu
+            progreso.
+          </p>
+          <div class="row">
+            <div class="col-md-6">
+              <p>
+                <strong><i class="fas fa-id-card"></i> Nombre:</strong> {tu
+                nombre}
+              </p>
+              <p>
+                <strong><i class="fas fa-envelope"></i> Email:</strong>
+                <a
+                  href="mailto: {tu correo}"
+                  aria-label="Enviar correo a {tu nombre}"
+                >
+                  {tu correo}
+                </a>
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p>
+                <strong><i class="fab fa-github"></i> GitHub:</strong>
+                <a
+                  href="https://github.com/{tu_usuario_github}"
+                  target="_blank"
+                  aria-label="Perfil de GitHub de {tu nombre}"
+                  >Github.com/{tu_usuario_github}</a
+                >
+              </p>
+              <p>
+                <strong><i class="fas fa-bullseye"></i> Objetivo:</strong>
+                Dominar Git y GitHub para colaborar en proyectos de desarrollo
+                web 💪
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ejercicio de la clase -->
+
+       <div class="ejercicio-clase">
+
+
+
+       </div>
+
+      <!-- Diferencias entre Fork y Clone -->
+      <div class="card mb-4" id="fork-clone">
+        <div class="card-header bg-info">
+          <i class="fas fa-code-branch section-icon"></i>Diferencia: Clonar vs
+          Forkear
+        </div>
+        <div class="card-body">
+          <!-- Estudiantes: entender estas diferencias es clave para trabajar en equipo -->
+          <p class="text-muted mb-3">
+            Clonar y forkear son formas de trabajar con repositorios. Imagina
+            que clonar es como sacar una fotocopia de un libro para leerlo
+            localmente, mientras que forkear es crear tu propia versión del
+            libro en tu cuenta de GitHub.
+          </p>
+          <div class="row">
+            <div class="col-md-6">
+              <h5>
+                <i class="fas fa-download section-icon"></i>Clonar un
+                Repositorio
+              </h5>
+              <p>
+                Clonar descarga una copia completa de un repositorio a tu
+                computadora. Úsalo cuando quieras trabajar localmente, pero
+                recuerda que no puedes subir cambios al repositorio original sin
+                permisos. Ejemplo: clonas el código de un proyecto para
+                probarlo.
+              </p>
+              <div class="position-relative">
+                <pre><code># Descarga el repositorio a tu máquina
+git clone https://github.com/usuario/repositorio.git</code></pre>
+                <button
+                  class="btn btn-sm btn-outline-secondary btn-copy"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Copiar comando"
+                  onclick="copyCode(this)"
+                  aria-label="Copiar comando de clonar"
+                >
+                  Copiar
+                </button>
+              </div>
+              <div class="alert alert-tip mt-3" role="alert">
+                <strong>Consejo:</strong> Verifica que tienes permisos si
+                planeas enviar cambios al repositorio original.
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h5>
+                <i class="fas fa-code-fork section-icon"></i>Forkear un
+                Repositorio
+              </h5>
+              <p>
+                Forkear crea una copia del repositorio en tu cuenta de GitHub.
+                Es ideal para contribuir a proyectos open source, ya que puedes
+                editar tu copia y proponer cambios al original con un
+                <em>pull request</em>. Ejemplo: forkeas un proyecto para añadir
+                una funcionalidad.
+              </p>
+              <div class="position-relative">
+                <pre><code># Clona tu propio fork
+git clone https://github.com/TU_USUARIO/repositorio-forkeado.git</code></pre>
+                <button
+                  class="btn btn-sm btn-outline-secondary btn-copy"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Copiar comando"
+                  onclick="copyCode(this)"
+                  aria-label="Copiar comando de fork"
+                >
+                  Copiar
+                </button>
+              </div>
+              <div class="alert alert-tip mt-3" role="alert">
+                <strong>Consejo:</strong> Mantén tu fork actualizado ejecutando
+                <code>git pull upstream main</code> si el repositorio original
+                se actualiza.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Estados de Archivos -->
+      <div class="card mb-4" id="estados">
+        <div class="card-header bg-secondary">
+          <i class="fas fa-file section-icon"></i>Estados de los Archivos en Git
+        </div>
+        <div class="card-body">
+          <!-- Estudiantes: estos estados te ayudan a saber qué está pasando con tus archivos -->
+          <p class="text-muted mb-3">
+            Git organiza tus archivos según su estado, como un bibliotecario que
+            registra qué libros han cambiado. Aprender estos estados te
+            permitirá gestionar mejor tus proyectos.
+          </p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <strong>Untracked:</strong> Archivos nuevos que Git no conoce,
+              como un archivo que acabas de crear.
+            </li>
+            <li class="list-group-item">
+              <strong>Tracked:</strong> Archivos que Git ya rastrea y monitorea
+              para detectar cambios.
+            </li>
+            <li class="list-group-item">
+              <strong>Modified:</strong> Archivos que has editado desde el
+              último commit, pero aún no están listos para guardarse.
+            </li>
+            <li class="list-group-item">
+              <strong>Staged:</strong> Archivos modificados que has marcado con
+              <code>git add</code> para incluir en el próximo commit.
+            </li>
+            <li class="list-group-item">
+              <strong>Deleted:</strong> Archivos eliminados que Git detecta;
+              confirma su eliminación con <code>git add</code> o
+              <code>git rm</code>.
+            </li>
+          </ul>
+          <div class="position-relative mt-3">
+            <pre><code># Revisa el estado actual de tus archivos
+git status</code></pre>
+            <button
+              class="btn btn-sm btn-outline-secondary btn-copy"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title="Copiar comando"
+              onclick="copyCode(this)"
+              aria-label="Copiar comando git status"
+            >
+              Copiar
+            </button>
+          </div>
+          <div class="alert alert-tip mt-3" role="alert">
+            <strong>Consejo:</strong> Usa <code>git status</code> regularmente
+            para mantenerte al tanto de los cambios en tu proyecto.
+          </div>
+        </div>
+      </div>
+
+      <!-- Tutoriales -->
+      <div class="card mb-4" id="tutoriales">
+        <div class="card-header bg-success">
+          <i class="fas fa-book section-icon"></i>Tutoriales Paso a Paso
+        </div>
+        <div class="card-body">
+          <!-- Estudiantes: estos pasos son tu guía para aprender Git y GitHub -->
+          <p class="text-muted mb-3">
+            Sigue estas instrucciones detalladas para dominar las herramientas
+            esenciales de control de versiones.
+          </p>
+          <div class="accordion" id="tutorialAccordion">
+            <!-- Crear Clave SSH -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#sshKey"
+                  aria-expanded="true"
+                >
+                  <i class="fas fa-key section-icon"></i> Crear una Clave SSH
+                </button>
+              </h2>
+              <div
+                id="sshKey"
+                class="accordion-collapse collapse show"
+                data-bs-parent="#tutorialAccordion"
+              >
+                <div class="accordion-body">
+                  <!-- Estudiantes: configurar una clave SSH es esencial para trabajar con GitHub sin contraseñas -->
+                  <p class="text-muted small">
+                    Una clave SSH actúa como una identificación segura para
+                    conectarte a GitHub. Te evita ingresar tu contraseña cada
+                    vez que subes o descargas código.
+                  </p>
+                  <ol>
+                    <li>
+                      <strong>Abre Git Bash</strong> o la terminal de tu sistema
+                      (puede ser Terminal en macOS o PowerShell en Windows).
+                    </li>
+                    <li>
+                      <strong>Genera tu clave SSH:</strong> Usa este comando,
+                      reemplazando <code>tu-email@example.com</code> con el
+                      correo asociado a tu cuenta de GitHub:
+                      <div class="position-relative mt-2">
+                        <pre><code># Crea una clave SSH con el algoritmo ed25519
+ssh-keygen -t ed25519 -C "tu-email@example.com"</code></pre>
+                        <button
+                          class="btn btn-sm btn-outline-secondary btn-copy"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Copiar comando"
+                          onclick="copyCode(this)"
+                          aria-label="Copiar comando de SSH"
+                        >
+                          Copiar
+                        </button>
+                      </div>
+                      <div class="alert alert-warning mt-2" role="alert">
+                        <strong>Atención:</strong> Si tu sistema no soporta
+                        ed25519, usa
+                        <code
+                          >ssh-keygen -t rsa -b 4096 -C
+                          "tu-email@example.com"</code
+                        >.
+                      </div>
+                    </li>
+                    <li>
+                      <strong>Confirma la ubicación:</strong> Presiona Enter
+                      para guardar la clave en <code>~/.ssh/id_ed25519</code>.
+                      Puedes agregar una contraseña para mayor seguridad
+                      (opcional, pero recomendado).
+                    </li>
+                    <li>
+                      <strong>Copia la clave pública:</strong> Muestra tu clave
+                      pública con:
+                      <div class="position-relative mt-2">
+                        <pre><code># Muestra la clave pública para copiarla
+cat ~/.ssh/id_ed25519.pub</code></pre>
+                        <button
+                          class="btn btn-sm btn-outline-secondary btn-copy"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Copiar comando"
+                          onclick="copyCode(this)"
+                          aria-label="Copiar comando cat"
+                        >
+                          Copiar
+                        </button>
+                      </div>
+                      Copia el texto que comienza con <code>ssh-ed25519</code>.
+                    </li>
+                    <li>
+                      <strong>Agrega la clave a GitHub:</strong> Ve a
+                      <a
+                        href="https://github.com/settings/keys"
+                        target="_blank"
+                        aria-label="Configurar claves SSH en GitHub"
+                        >Configuración > SSH and GPG keys > New SSH key</a
+                      >, pega la clave y asigna un nombre descriptivo (ej. "Mi
+                      Laptop").
+                    </li>
+                    <li>
+                      <strong>Prueba la conexión:</strong> Verifica que todo
+                      esté configurado correctamente:
+                      <div class="position-relative mt-2">
+                        <pre><code># Prueba la conexión con GitHub
+ssh -T git@github.com</code></pre>
+                        <button
+                          class="btn btn-sm btn-outline-secondary btn-copy"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Copiar comando"
+                          onclick="copyCode(this)"
+                          aria-label="Copiar comando de prueba SSH"
+                        >
+                          Copiar
+                        </button>
+                      </div>
+                      Si todo está bien, verás un mensaje como
+                      <code
+                        >Hi username! You've successfully authenticated...</code
+                      >.
+                    </li>
+                  </ol>
+                  <!-- Estudiantes: este video te guiará visualmente para configurar tu clave SSH -->
+                  <p class="text-muted small mt-3">
+                    Mira este video para un tutorial visual sobre cómo
+                    configurar tu clave SSH:
+                  </p>
+                  <div class="video-container">
+                    <iframe
+                      src="https://www.youtube.com/embed/akuG7eRtaXc"
+                      title="Tutorial de configuración de clave SSH para GitHub"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <div class="alert alert-tip mt-3" role="alert">
+                    <strong>Consejo:</strong> Simplifica el uso de tu clave con
+                    <code>ssh-agent</code>: ejecuta
+                    <code>eval "$(ssh-agent -s)"</code> y
+                    <code>ssh-add ~/.ssh/id_ed25519</code>.
+                  </div>
+                  <div class="alert alert-warning mt-2" role="alert">
+                    <strong>¡Cuidado!</strong> Nunca compartas tu clave privada
+                    (<code>id_ed25519</code>). Mantenla segura en tu
+                    computadora.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Configurar Git -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#configGit"
+                >
+                  <i class="fas fa-cog section-icon"></i> Configurar Git en Git
+                  Bash
+                </button>
+              </h2>
+              <div
+                id="configGit"
+                class="accordion-collapse collapse"
+                data-bs-parent="#tutorialAccordion"
+              >
+                <div class="accordion-body">
+                  <!-- Estudiantes: configurar Git es como firmar tus trabajos -->
+                  <p class="text-muted small">
+                    Configura tu nombre y correo en Git para que tus commits
+                    estén asociados a ti, como una firma digital.
+                  </p>
+                  <div class="position-relative">
+                    <pre><code># Establece tu nombre de usuario
+git config --global user.name "Tu Nombre"
+# Establece tu correo electrónico
+git config --global user.email "tu-email@example.com"</code></pre>
+                    <button
+                      class="btn btn-sm btn-outline-secondary btn-copy"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title="Copiar comando"
+                      onclick="copyCode(this)"
+                      aria-label="Copiar comando de configuración"
+                    >
+                      Copiar
+                    </button>
+                  </div>
+                  <div class="alert alert-tip mt-3" role="alert">
+                    <strong>Consejo:</strong> Verifica tu configuración
+                    ejecutando <code>git config --global --list</code>.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Forkear Repositorio -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#forkRepo"
+                >
+                  <i class="fas fa-code-fork section-icon"></i> Forkear un
+                  Repositorio
+                </button>
+              </h2>
+              <div
+                id="forkRepo"
+                class="accordion-collapse collapse"
+                data-bs-parent="#tutorialAccordion"
+              >
+                <div class="accordion-body">
+                  <!-- Estudiantes: forkear es ideal para contribuir a proyectos sin modificar el original -->
+                  <p class="text-muted small">
+                    Forkear crea una copia de un repositorio en tu cuenta de
+                    GitHub, perfecta para experimentar o contribuir a proyectos
+                    open source.
+                  </p>
+                  <ol>
+                    <li>Visita el repositorio original en GitHub.</li>
+                    <li>
+                      Haz clic en el botón <strong>Fork</strong> en la esquina
+                      superior derecha.
+                    </li>
+                    <li>
+                      Espera a que GitHub cree tu copia. ¡Listo! Ahora tienes tu
+                      propio repositorio.
+                    </li>
+                  </ol>
+                  <div class="alert alert-tip mt-3" role="alert">
+                    <strong>Consejo:</strong> Usa forks para probar ideas sin
+                    afectar el proyecto principal.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Clonar Repositorio Forkeado -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#cloneFork"
+                >
+                  <i class="fas fa-download section-icon"></i> Clonar un
+                  Repositorio Forkeado
+                </button>
+              </h2>
+              <div
+                id="cloneFork"
+                class="accordion-collapse collapse"
+                data-bs-parent="#tutorialAccordion"
+              >
+                <div class="accordion-body">
+                  <!-- Estudiantes: clonar tu fork te permite trabajar localmente -->
+                  <p class="text-muted small">
+                    Clona tu repositorio forkeado para editarlo en tu
+                    computadora.
+                  </p>
+                  <div class="position-relative">
+                    <pre><code># Descarga tu fork a tu máquina
+git clone https://github.com/TU_USUARIO/repositorio-forkeado.git</code></pre>
+                    <button
+                      class="btn btn-sm btn-outline-secondary btn-copy"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title="Copiar comando"
+                      onclick="copyCode(this)"
+                      aria-label="Copiar comando de clonar fork"
+                    >
+                      Copiar
+                    </button>
+                  </div>
+                  <div class="alert alert-tip mt-3" role="alert">
+                    <strong>Consejo:</strong> Asegúrate de estar en el
+                    directorio correcto con <code>cd ~/proyectos</code> antes de
+                    clonar.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Crear Repositorio -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#createRepo"
+                >
+                  <i class="fas fa-folder-plus section-icon"></i> Crear un
+                  Repositorio en GitHub
+                </button>
+              </h2>
+              <div
+                id="createRepo"
+                class="accordion-collapse collapse"
+                data-bs-parent="#tutorialAccordion"
+              >
+                <div class="accordion-body">
+                  <!-- Estudiantes: crea tu propio repositorio para iniciar un proyecto -->
+                  <p class="text-muted small">
+                    Crea un nuevo repositorio en GitHub para alojar tu código
+                    desde cero.
+                  </p>
+                  <ol>
+                    <li>
+                      Haz clic en <strong>New repository</strong> en tu perfil
+                      de GitHub.
+                    </li>
+                    <li>
+                      Elige un nombre único y agrega una descripción clara.
+                    </li>
+                    <li>
+                      Selecciona si será público o privado, y decide si incluir
+                      un README.
+                    </li>
+                    <li>Haz clic en <strong>Create repository</strong>.</li>
+                  </ol>
+                  <div class="alert alert-tip mt-3" role="alert">
+                    <strong>Consejo:</strong> Incluye un archivo
+                    <code>.gitignore</code> al crear el repositorio para evitar
+                    subir archivos innecesarios.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Inicializar Repositorio en VSC -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#initVSC"
+                >
+                  <i class="fas fa-laptop-code section-icon"></i> Inicializar un
+                  Repositorio desde Visual Studio Code
+                </button>
+              </h2>
+              <div
+                id="initVSC"
+                class="accordion-collapse collapse"
+                data-bs-parent="#tutorialAccordion"
+              >
+                <div class="accordion-body">
+                  <!-- Estudiantes: inicializar un repositorio en VSC es ideal para tus proyectos -->
+                  <p class="text-muted small">
+                    Crea un repositorio local en tu computadora usando Visual
+                    Studio Code para versionar tu código.
+                  </p>
+                  <ol>
+                    <li>Abre tu proyecto en Visual Studio Code.</li>
+                    <li>Abre la terminal integrada (Ctrl + `).</li>
+                    <li>Inicializa el repositorio: <code>git init</code></li>
+                    <li>Agrega todos los archivos: <code>git add .</code></li>
+                    <li>
+                      Realiza el primer commit:
+                      <code
+                        >git commit -m "Primer commit: inicialización del
+                        proyecto"</code
+                      >
+                    </li>
+                  </ol>
+                  <div class="alert alert-tip mt-3" role="alert">
+                    <strong>Consejo:</strong> Usa mensajes de commit
+                    descriptivos para documentar tus cambios.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Conectar con GitHub -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#connectGitHub"
+                >
+                  <i class="fas fa-link section-icon"></i> Conectar con GitHub
+                </button>
+              </h2>
+              <div
+                id="connectGitHub"
+                class="accordion-collapse collapse"
+                data-bs-parent="#tutorialAccordion"
+              >
+                <div class="accordion-body">
+                  <!-- Estudiantes: este paso conecta tu trabajo local con GitHub -->
+                  <p class="text-muted small">
+                    Vincula tu repositorio local con uno en GitHub para
+                    sincronizar tus cambios.
+                  </p>
+                  <div class="position-relative">
+                    <pre><code># Conecta tu repositorio local a GitHub
+git remote add origin https://github.com/TU_USUARIO/TU_REPO.git</code></pre>
+                    <button
+                      class="btn btn-sm btn-outline-secondary btn-copy"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title="Copiar comando"
+                      onclick="copyCode(this)"
+                      aria-label="Copiar comando de conexión"
+                    >
+                      Copiar
+                    </button>
+                  </div>
+                  <div class="alert alert-tip mt-3" role="alert">
+                    <strong>Consejo:</strong> Verifica la conexión con
+                    <code>git remote -v</code>.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Hacer un Commit -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#makeCommit"
+                >
+                  <i class="fas fa-save section-icon"></i> Hacer un Commit
+                </button>
+              </h2>
+              <div
+                id="makeCommit"
+                class="accordion-collapse collapse"
+                data-bs-parent="#tutorialAccordion"
+              >
+                <div class="accordion-body">
+                  <!-- Estudiantes: los commits son como guardar tu progreso en un juego -->
+                  <p class="text-muted small">
+                    Un commit guarda una instantánea de tus cambios. Usa
+                    mensajes claros para recordar qué hiciste.
+                  </p>
+                  <div class="position-relative">
+                    <pre><code># Agrega todos los cambios
+git add .
+# Crea un commit con un mensaje claro
+git commit -m "Cambios realizados en mi HTML y CSS"</code></pre>
+                    <button
+                      class="btn btn-sm btn-outline-secondary btn-copy"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title="Copiar comando"
+                      onclick="copyCode(this)"
+                      aria-label="Copiar comando de commit"
+                    >
+                      Copiar
+                    </button>
+                  </div>
+                  <div class="alert alert-tip mt-3" role="alert">
+                    <strong>Consejo:</strong> Usa
+                    <code>git add nombre_archivo</code> para agregar archivos
+                    específicos.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Subir Cambios -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#pushChanges"
+                >
+                  <i class="fas fa-cloud-upload-alt section-icon"></i> Subir
+                  Cambios (Push)
+                </button>
+              </h2>
+              <div
+                id="pushChanges"
+                class="accordion-collapse collapse"
+                data-bs-parent="#tutorialAccordion"
+              >
+                <div class="accordion-body">
+                  <!-- Estudiantes: subir cambios es como publicar tu trabajo -->
+                  <p class="text-muted small">
+                    Envía tus commits locales a GitHub para compartirlos o
+                    respaldarlos.
+                  </p>
+                  <div class="position-relative">
+                    <pre><code># Sube los cambios a la rama principal
+git push -u origin main</code></pre>
+                    <button
+                      class="btn btn-sm btn-outline-secondary btn-copy"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title="Copiar comando"
+                      onclick="copyCode(this)"
+                      aria-label="Copiar comando de push"
+                    >
+                      Copiar
+                    </button>
+                  </div>
+                  <div class="alert alert-tip mt-3" role="alert">
+                    <strong>Consejo:</strong> Si trabajas en una rama, usa su
+                    nombre en lugar de <code>main</code> (ej.
+                    <code>feature/nueva-funcionalidad</code>).
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pie de página -->
+      <footer class="text-center mt-5">
+        <hr />
+        <p class="text-muted small">
+          Hecho con ❤️ por Ivan Iraldi para
+          <a
+            href="https://desafiolatam.com"
+            target="_blank"
+            aria-label="Visitar sitio de DesafíoLatam"
+            >DesafíoLatam</a
+          >
+        </p>
+        <div class="mt-3">
+          <h6 class="text-decoration-underline">Progreso del Módulo</h6>
+          <ul class="list-unstyled text-muted small">
+            <li>
+              <i class="fas fa-check-circle text-success"></i> Aprender bases
+              del desarrollo web (HTML)
+            </li>
+            <li>
+              <i class="fas fa-check-circle text-success"></i> Entender y
+              practicar CSS
+            </li>
+            <li>
+              <i class="fas fa-check-circle text-success"></i> Profundizar en
+              CSS con flexbox
+            </li>
+            <li>
+              <i class="fas fa-check-circle text-success"></i> Aprender
+              framework CSS (Bootstrap)
+            </li>
+            <li>
+              <i class="fas fa-check-circle text-success"></i> Crear y subir
+              repositorios
+            </li>
+            <li>
+              <p class="text-center text-muted mt-3">
+                <strong>Proximamente...</strong>
+              </p>
+            </li>
+            <li>
+              <i class="fas fa-circle text-danger"></i> ¡Crea tu primer proyecto
+              en GitHub Pages y despliega tu sitio web!
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Scripts para interactividad -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Inicializa los tooltips de Bootstrap
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]'
+      );
+      const tooltipList = [...tooltipTriggerList].map(
+        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+      );
+
+      // Función para copiar código al portapapeles
+      function copyCode(button) {
+        const code =
+          button.previousElementSibling.querySelector("code").innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          button.textContent = "¡Copiado!";
+          setTimeout(() => {
+            button.textContent = "Copiar";
+          }, 2000);
+        });
+      }
+    </script>
+  </body>
+</html>

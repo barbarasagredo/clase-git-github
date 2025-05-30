@@ -1,0 +1,175 @@
+  body {
+        background-color: #f8f9fa;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+      }
+      .header-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        animation: fadeIn 1s ease-in;
+      }
+      .navbar {
+        background: linear-gradient(90deg, #007bff, #00d4ff);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .card {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+        opacity: 0;
+        animation: fadeInUp 0.8s ease-out forwards;
+        animation-delay: calc(0.2s * var(--card-index));
+      }
+      .card:hover {
+        transform: scale(1.02);
+        transition: transform 0.3s ease;
+      }
+      .card-header {
+        font-size: 1.3rem;
+        font-weight: 600;
+        border-radius: 12px 12px 0 0;
+        background: linear-gradient(90deg, var(--bs-primary), #6c757d);
+        color: white;
+      }
+      .card-body {
+        padding: 2rem;
+      }
+      pre {
+        background-color: #2d2d2d;
+        color: #e6e6e6;
+        padding: 1.5rem;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        overflow-x: auto;
+        position: relative;
+      }
+      code {
+        font-family: "Consolas", "Monaco", monospace;
+      }
+      .section-icon {
+        margin-right: 0.6rem;
+      }
+      .accordion-button {
+        font-weight: 500;
+        background-color: #e9ecef;
+        transition: background-color 0.3s ease;
+      }
+      .accordion-button:not(.collapsed) {
+        background: linear-gradient(90deg, #007bff, #00d4ff);
+        color: white;
+      }
+      .accordion-body {
+        animation: slideIn 0.5s ease-out;
+      }
+      footer {
+        border-top: 3px solid #dee2e6;
+        padding-top: 2.5rem;
+      }
+      .list-group-item {
+        border: none;
+        padding: 0.8rem 1.6rem;
+        transition: background-color 0.2s ease;
+      }
+      .list-group-item:hover {
+        background-color: #f1f3f5;
+      }
+      .btn-copy {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 0.85rem;
+        transition: all 0.3s ease;
+      }
+      .btn-copy:hover {
+        background-color: #007bff;
+        color: white;
+      }
+      .btn-copy:active {
+        animation: pulse 0.3s ease;
+      }
+      .alert-tip {
+        background-color: #e6f3ff;
+        border-color: #007bff;
+      }
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        margin-top: 1rem;
+      }
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+      }
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      /* Card animation delays */
+      .card:nth-child(1) {
+        --card-index: 1;
+      }
+      .card:nth-child(2) {
+        --card-index: 2;
+      }
+      .card:nth-child(3) {
+        --card-index: 3;
+      }
+      .card:nth-child(4) {
+        --card-index: 4;
+      }
+
+      .ejercicio-clase {
+        background-color: #f8f9fa;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+        padding: 3rem;
+        opacity: 0;
+        animation: fadeInUp 0.8s ease-out forwards;
+        animation-delay: calc(0.2s * var(--card-index));
+      }
